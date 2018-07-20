@@ -1,0 +1,56 @@
+{
+    "name": "vscode-file-generator",
+    "displayName": "vscode-file-generator",
+    "description": "This extension creates files with provided custom code snippets.",
+    "version": "0.0.1",
+    "publisher": "OPLOG",
+    "engines": {
+        "vscode": "^1.25.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.sayHello",
+                "title": "Hello World"
+            },
+            {
+                "command": "extension.generateFile",
+                "title": "Generate File"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "when": "",
+                    "command": "extension.generateFile",
+                    "group": "fileGenerator"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "@types/lodash": "^4.14.112",
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^7.0.43",
+        "tslint": "^5.8.0",
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6"
+    },
+    "dependencies": {
+        "lodash": "^4.17.10"
+    }
+}
