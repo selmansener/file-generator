@@ -19,12 +19,22 @@ export const defaultConfig: GeneratorConfig[] = [
         title: "Generate Action File",
         files: [
             {
-                fileName: "action",
+                fileName: "{prefix}-{containerName}-action",
                 extension: "ts",
                 codeSnippet: '"export const {actionName} = "{actionName}"\nexport type {actionName} = typeof {actionName};"'
             }
         ]
 
+    },
+    {
+        title: "Generate Dummy File",
+        files: [
+            {
+                fileName: "{prefix}-dummy",
+                extension: "tsx",
+                codeSnippet: 'export const {constName};'
+            }
+        ]
     }
 ];
 
